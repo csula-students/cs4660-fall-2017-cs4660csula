@@ -18,34 +18,20 @@ class SimpleFile(object):
     def get_mean(self, line_number):
         line = self.numbers[line_number]
         return sum(line)/(len(line))
-        """
-        get_mean retrieves the mean value of the list by line_number (starts
-        with zero)
-        """
-
-        #pass
+        
 
     def get_max(self, line_number):
         line = self.numbers[line_number]
         line.sort()
         line.reverse()
         return line[0]
-        """
-        get_max retrieves the maximum value of the list by line_number (starts
-        with zero)
-        """
         
-        # pass
 
     def get_min(self, line_number):
         line = self.numbers[line_number]
         line.sort()
         return line[0]
-        """
-        get_min retrieves the minimum value of the list by line_number (starts
-        with zero)
-        """
-        
+             
 
     def get_sum(self, line_number):
         return sum(self.numbers[line_number]
