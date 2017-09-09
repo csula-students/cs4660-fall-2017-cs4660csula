@@ -1,44 +1,53 @@
-# git """Files tests simple file read related operations"""
+git """Files tests simple file read related operations"""
 
 class SimpleFile(object):
     """SimpleFile tests using file read api to do some simple math"""
     def __init__(self, file_path):
         self.numbers = []
+        with open(file_path) as f1:
+            for line in range(f1):
+                line = line.strip().split(" ")
+                self.numbers.append(list(map(int,line)))
         """
         TODO: reads the file by path and parse content into two
         dimension array (numbers)
-
+        https://stackoverflow.com/questions/1369526/what-is-the-python-keyword-with-used-for
         """
-        with open(file_path) as f:
-            for line in f:
-                self.numbers.append(float(i) for i in line.split())
+        
 
     def get_mean(self, line_number):
+        line = self.numbers[line_number]
+        return sum(line)/(len(line))
         """
         get_mean retrieves the mean value of the list by line_number (starts
         with zero)
         """
-        
-        pass
+
+        #pass
 
     def get_max(self, line_number):
+        line = self.numbers[line_number]
+        line.sort()
+        line.reverse()
+        return line[0]
         """
         get_max retrieves the maximum value of the list by line_number (starts
         with zero)
         """
-        return max(self.numbers[line_number])
-        pass
+        
+        # pass
 
     def get_min(self, line_number):
+        line = self.numbers[line_number]
+        line.sort()
+        return line[0]
         """
         get_min retrieves the minimum value of the list by line_number (starts
         with zero)
         """
-        pass
+        
 
     def get_sum(self, line_number):
-        """
-        get_sum retrieves the sumation of the list by line_number (starts with
-        zero)
-        """
-        pass
+        return sum(self.numbers[line_number]
+
+        
