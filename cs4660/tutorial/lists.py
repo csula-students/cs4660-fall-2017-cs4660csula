@@ -4,7 +4,7 @@ def get_first_item(li):
     
 
 def get_last_item(li):
-    return len(li)-1
+    return li-1
     
     
 
