@@ -1,5 +1,5 @@
 """Lists defines simple list related operations"""
-
+# finishing up the class exercises
 def get_first_item(li):
     """Return the first item from the list"""
     print(li)
