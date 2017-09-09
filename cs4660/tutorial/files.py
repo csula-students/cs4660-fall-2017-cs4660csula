@@ -17,7 +17,7 @@ class SimpleFile(object):
 
     def get_mean(self, line_number):
         line = self.numbers[line_number]
-        return sum(line)/(len(line))
+        return sum(line)/float(len(line))
         
 
     def get_max(self, line_number):
