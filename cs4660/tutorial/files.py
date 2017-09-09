@@ -1,4 +1,4 @@
-git """Files tests simple file read related operations"""
+# git """Files tests simple file read related operations"""
 
 class SimpleFile(object):
     """SimpleFile tests using file read api to do some simple math"""
