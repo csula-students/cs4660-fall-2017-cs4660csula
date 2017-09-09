@@ -4,12 +4,12 @@ def get_first_item(li):
     
 
 def get_last_item(li):
-    return li-1
+    return li[-1]
     
     
 
 def get_second_and_third_items(li):
-    return li[1], li[2]
+    return li[1:3]
      
     
 
