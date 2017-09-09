@@ -5,7 +5,7 @@ class SimpleFile(object):
     def __init__(self, file_path):
         self.numbers = []
         with open(file_path) as f1:
-            for line in range(f1):
+            for line in f1:
                 line = line.strip().split(" ")
                 self.numbers.append(list(map(int,line)))
         """
