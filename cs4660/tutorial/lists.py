@@ -23,5 +23,3 @@ def get_sum(li):
 def get_avg(li):
     sum=get_sum(li)
     return sum/len(li)
-    
-    
