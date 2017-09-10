@@ -89,6 +89,9 @@ class AdjacencyList(object):
         
 
     def neighbors(self, node):
+        if node not in self.neighbors:
+            self.neighbors.append(node)
+            self.neighbors.sort()
 
         
 
