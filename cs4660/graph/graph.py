@@ -89,7 +89,7 @@ class AdjacencyList(object):
         
 
     def neighbors(self, node):
-        
+
         
 
     def add_node(self, node):
@@ -134,7 +134,7 @@ class AdjacencyMatrix(object):
     def __get_node_index(self, node):
         """helper method to find node index"""
         
-
+# This is the third class.
 class ObjectOriented(object):
     """ObjectOriented defines the edges and nodes as both list"""
     def __init__(self):
