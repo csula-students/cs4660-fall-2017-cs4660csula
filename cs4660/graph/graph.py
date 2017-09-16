@@ -105,6 +105,8 @@ class AdjacencyList(object):
 
         # https://stackoverflow.com/questions/39813525/how-do-i-store-this-in-an-adjacency-list-for-graphs-in-python
 
+        # Homework help with the graphs https://github.com/agore1/cs3240/blob/master/HW3/graph.py
+
     def neighbors(self, node):
         if node not in self.neighbors:
             self.neighbors.append(node)
