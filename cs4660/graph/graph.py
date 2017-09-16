@@ -20,11 +20,15 @@ A Graph has following methods:
     - remove an edge from its internal data structure
     - returns true if the edge is removed and false if the edge does not exist
 """
-
+# https://stackoverflow.com/questions/39813525/how-do-i-store-this-in-an-adjacency-list-for-graphs-in-python 
 from io import open
 from operator import itemgetter
 
 def construct_graph_from_file(graph, file_path):
+
+     
+
+
     """
     TODO: read content from file_path, then add nodes and edges to graph object
 
@@ -45,11 +49,13 @@ class Node(object):
 
     def __str__(self):
         return 'Node({})'.format(self.data)
+    
     def __repr__(self):
         return 'Node({})'.format(self.data)
 
     def __eq__(self, other_node):
         return self.data == other_node.data
+    
     def __ne__(self, other):
         return not self.__eq__(other)
 
@@ -62,13 +68,16 @@ class Edge(object):
         self.from_node = from_node
         self.to_node = to_node
         self.weight = weight
+    
     def __str__(self):
         return 'Edge(from {}, to {}, weight {})'.format(self.from_node, self.to_node, self.weight)
+    
     def __repr__(self):
         return 'Edge(from {}, to {}, weight {})'.format(self.from_node, self.to_node, self.weight)
 
     def __eq__(self, other_node):
         return self.from_node == other_node.from_node and self.to_node == other_node.to_node and self.weight == other_node.weight
+    
     def __ne__(self, other):
         return not self.__eq__(other)
 
@@ -86,7 +95,15 @@ class AdjacencyList(object):
         self.adjacency_list = {}
 
     def adjacent(self, node_1, node_2):
+        assert self.has_node(node1)
+        assert self.has_node(node2)
+        self._nodes[node1].add(node2)
         
+        # https://github.com/udacity/cs101/blob/master/Lesson_11_Files,_IO,_and_Exceptions/26-Pickle_the_Crawl/supplied/graph.py
+
+        # https://stackoverflow.com/questions/36732312/python-build-adjacency-list-from-list-of-nodes-and-edges
+
+        # https://stackoverflow.com/questions/39813525/how-do-i-store-this-in-an-adjacency-list-for-graphs-in-python
 
     def neighbors(self, node):
         if node not in self.neighbors:
@@ -96,15 +113,26 @@ class AdjacencyList(object):
         
 
     def add_node(self, node):
+        if node in self._nodes:
+            return false
+        self._nodes[node] = set()
+        return true
         
-
+     # Removes a given node from a graph.
+     # https://brilliant.org/wiki/graphs-intermediate/
     def remove_node(self, node):
+        for node in self.nodes:
+            if node in self.nodes[node]:
+                self.nodes[node].remove(node)
+        del self.nodes(node)
         
-
+        # https://codereview.stackexchange.com/questions/120496/a-graph-representation-of-adjacent-matrix-in-python
     def add_edge(self, edge):
+        self.edge.append(edge)
         
 
     def remove_edge(self, edge):
+        self.edge.discard(edge)
         
 
 class AdjacencyMatrix(object):
