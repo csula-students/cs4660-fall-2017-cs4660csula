@@ -39,7 +39,26 @@ def construct_graph_from_file(graph, file_path):
     1. add number of nodes to graph first (first line)
     2. for each following line (from second line to last line), add them as edge to graph
     3. return the graph
+
     """
+    try:
+        fhand = open('mbox-short.txt')
+    except:
+        print('File not found, lol, what happened?')
+        exit()
+    count = 0
+    for line in fhand:
+        count = count + 1;
+    print('Line count:', count)
+
+    # Severance, Charles. Python for Everybody: Exploring Data in Python 3 (Kindle Locations 1543-1544). Kindle Edition. 
+
+    # fhand = open('mbox-short.txt')
+    # inp = fhand.read()
+    # print(len(np))
+    # alternative method to read files   
+
+
     return graph
 
 class Node(object):
