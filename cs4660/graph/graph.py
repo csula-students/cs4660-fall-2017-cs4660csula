@@ -61,67 +61,7 @@ def construct_graph_from_file(graph, file_path):
             my_edge = Edge(Node(int(data[0])), Node(int(data[1])), int(data[2]))
             graph.add_edge(my_edge)
         
-        return graph 
-
-
-
-    """
-    try:
-        fhand = open(file_path, encoding='utf-8')
-        fdata = fhand.read()
-        flines = fdata.split().trim()
-        fnodes = int(lines.seek[0])
-    except:
-        print('File not found, lol, what happened?')
-        exit()
-    count = 0
-    for line in fhand:
-        count = count + 1;
-    print('Line count:', count)
-    """
-    # Graph will be of three types
-
-    # Severance, Charles. Python for Everybody: Exploring Data in Python 3 (Kindle Locations 1543-1544). Kindle Edition. 
-
-    # fhand = open('mbox-short.txt')
-    # inp = fhand.read()
-    # print(len(np))
-    # alternative method to read files   
-    # https://stackoverflow.com/questions/491921/unicode-utf-8-reading-and-writing-to-files-in-python
-    """
-    if graph is AdjacencyList:
-        for fnum in range(fnodes):
-            graph.adjacency_list[Node(fnum)] = []
-        for line in flines[1:]:
-            if line:
-                from_node, to_node, weight = map(int, line.split(':'))
-                edge = Edge(Node(from_node), Node(to_node), weight)
-                graph.adjacency_list[Node(from_node)].append(edge)
-
-    if graph is AdjacencyMatrix:
-        graph.adjacency_matrix = [[0 for x in range(fnodes)] for y in range(fnodes)]
-        for line in flines[1:]:
-            if line:
-                from node, to node, weight = map(int, line.split(':').trim)
-                graph.adjacency_matrix[from_nodeode][to_node] = weight
-
-        graph.nodes = (Node(fnum) : num for num in range (num_nodes))
-
-
-    if graph is ObjectOriented:
-        fsetnodes = set()
-        for line in flines[1:]:
-            if line:
-                from_node, to_node, weight = map.put(int, line.split(':').trim)
-                edge = Edge(Node(from_node), Node(to_node), weight)
-                set_nodes.update([Node(from_node), Node(to_node)])
-                graph.edges.map.put(edge)
-        graph.nodes = list(set_nodes)
-
-
-
-    return graph
-    """
+        return graph
 
 # Don't do nothing here.
 class Node(object):
