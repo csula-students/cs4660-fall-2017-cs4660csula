@@ -21,6 +21,9 @@ A Graph has following methods:
     - returns true if the edge is removed and false if the edge does not exist
 """
 # https://stackoverflow.com/questions/39813525/how-do-i-store-this-in-an-adjacency-list-for-graphs-in-python 
+
+# important
+# use this for later to fix code, some stuff is wrong: https://pythonspot.com/en/read-file/
 from io import open
 from operator import itemgetter
 
@@ -42,6 +45,28 @@ def construct_graph_from_file(graph, file_path):
 
     """
     try:
+        with open(file_path) as f1:
+            content = f1.read().splitlines()
+
+        num_nodes = int(content[0])
+        
+        # We got the first line.
+        for v in range(num_nodes):
+            my_nodes = Node(v)
+            graph.add_node(my_node)
+
+        # We do the second line.
+        for v in range(1, len(content)):
+            data = content[v].split(":")
+            my_edge = Edge(Node(int(data[0])), Node(int(data[1])), int(data[2]))
+            graph.add_edge(my_edge)
+        
+        return graph 
+
+
+
+    """
+    try:
         fhand = open(file_path, encoding='utf-8')
         fdata = fhand.read()
         flines = fdata.split().trim()
@@ -53,7 +78,7 @@ def construct_graph_from_file(graph, file_path):
     for line in fhand:
         count = count + 1;
     print('Line count:', count)
-    
+    """
     # Graph will be of three types
 
     # Severance, Charles. Python for Everybody: Exploring Data in Python 3 (Kindle Locations 1543-1544). Kindle Edition. 
@@ -63,7 +88,7 @@ def construct_graph_from_file(graph, file_path):
     # print(len(np))
     # alternative method to read files   
     # https://stackoverflow.com/questions/491921/unicode-utf-8-reading-and-writing-to-files-in-python
-
+    """
     if graph is AdjacencyList:
         for fnum in range(fnodes):
             graph.adjacency_list[Node(fnum)] = []
@@ -96,7 +121,7 @@ def construct_graph_from_file(graph, file_path):
 
 
     return graph
-
+    """
 
 # Don't do nothing here.
 class Node(object):
