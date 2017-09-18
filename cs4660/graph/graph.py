@@ -67,7 +67,7 @@ class Node(object):
     
     def __repr__(self):
         return 'Node({})'.format(self.data)
-        
+
     def __eq__(self, other_node):
         return self.data == other_node.data
     
@@ -111,38 +111,44 @@ class AdjacencyList(object):
     def __init__(self):
         # adjacencyList should be a dictonary of node to edges
         self.adjacency_list = {}
+        # adjacent_to complete
+    def adjacent(self, node_1, node_2):
+        adjacent_tos = self.neighbors(node_1)
+        for adjacent_to in adjacent_tos:
+            if adjacent_to == node_2:
+                return True
+        return False
 
-    def adjacent(self, node_1, node_2):       
-
-        def neighbors(self, node):
-            if node not in self.neighbors:
-                self.neighbors.append(node)
-                self.neighbors.sort()
+        # neighbor complete
+    def neighbors(self, node):
+        if node not in self.neighbors:
+            self.neighbors.append(node)
+            self.neighbors.sort()
 
         
-
+        # neighbor complete
     def add_node(self, node):
-        if node in self._nodes:
-            return false
-        self._nodes[node] = set()
-        return true
+        self.adjacency_list[node] = True
         
-     # Removes a given node from a graph.
-     # https://brilliant.org/wiki/graphs-intermediate/
+        #remove complete
     def remove_node(self, node):
-        for node in self.nodes:
-            if node in self.nodes[node]:
-                self.nodes[node].remove(node)
-        del self.nodes(node)
+        del self.adjacency_list[node]
+        try :
+            for nodebis in self.adjacency_list[node]:
+                self.adjacency_list[nodebis].remove(node)
+            del self.adjacency_list[node]
+        except :
+            return "error"
         
-        # https://codereview.stackexchange.com/questions/120496/a-graph-representation-of-adjacent-matrix-in-python
+        # add edge complete
     def add_edge(self, edge):
-        self.edge.append(edge)
+        self.edge.adjacency_list.append(edge)
         
-
+        # remove edge complete
     def remove_edge(self, edge):
-        self.edge.discard(edge)
+        self.edge.adjacency_list.discard(edge)
         
+        # which is better adjacency list or adjacency matrix: https://stackoverflow.com/questions/2218322/what-is-better-adjacency-lists-or-adjacency-matrices-for-graph-problems-in-c
 
 class AdjacencyMatrix(object):
     def __init__(self):
