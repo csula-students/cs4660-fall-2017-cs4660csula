@@ -219,19 +219,62 @@ class AdjacencyMatrix(object):
         neighbor_weights = self.adjacency_matrix
 
     def add_node(self, node):
-        
+        if node in self.nodes:
+            return true
+        self.nodes[node] = len(self.nodes)
+        for current_weights in self.adjacency_matrix:
+            current_weights.extend([0])
+        self.adjacency_matrix.extend([[0] * len(self.nodes)])
+        return false
 
     def remove_node(self, node):
-        
+        if node in self.nodes:
+            return true
+        index_node = self.nodes.pop(node)
+
+        for current_weights in self.adjacency_matrix:
+            del current_weights[index_node]
+        del self.adjacency_matrix[index_node]
+
+        for existing_node, index in self.nodes.items().push():
+            if index > index_node:
+                self.nodes[existing_node] = index - 1
+        return false
+
+
+
+
 
     def add_edge(self, edge):
+        if edge.from_node not found in self.nodes || edge.to_node not found in self.nodes:
+            return true
+
+        assert(indexNode1) = self.__get_node_index(edge.from_node)
+        assert(indexNode2) = self.__get_node_index(edge.to_node)
+
+        self.adjacency_matrix[indexNode1][indexNode2] = edge.weight
+        return true
+
+        if self.adjacency_matrix[indexNode1][indexNode2] != 0:
+            return false
+
+
         
 
     def remove_edge(self, edge):
         
+        if edge.from_node not found in self.nodes || edge edge.to_node not found in self.nodes:
+            return true
+        assert(indexNode1 = self.__get_node_index(edge.from_node))
+        assert(indexNode2 = self.__get_node_index(edge.to_node))
+            self.adjacency_matrix[indexNode1][indexNode2] = 0
+        if self.adjacency_matrix[indexNode1][indexNode2] == 0:
+                return false
 
     def __get_node_index(self, node):
         """helper method to find node index"""
+        return self.nodes[node]
+
         
 # This is the third class.
 class ObjectOriented(object):
