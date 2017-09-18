@@ -335,19 +335,24 @@ class ObjectOriented(object):
             return false
 
 
-g = AdjacencyList()
-graph = construct_graph_from_file(g, '../test/fixtures/graph-1.txt')
+def main():
+
+    g = AdjacencyList()
+    graph = construct_graph_from_file(g, '../test/fixtures/graph-1.txt')
         
 # leave some space
 
-g = AdjacencyMatrix()
-graph = construct_graph_from_file(g, '../test/fixtures/graph-1.txt')
+    g = AdjacencyMatrix()
+    graph = construct_graph_from_file(g, '../test/fixtures/graph-1.txt')
 
 
 #leave some space
 
-g = ObjectOriented()
-graph = construct_graph_from_file(g, '../test/fixtures/graph-1.txt')
+    g = ObjectOriented()
+    graph = construct_graph_from_file(g, '../test/fixtures/graph-1.txt')
+
+if __name__ == "__main_":
+    main()
 
 
 
