@@ -20,17 +20,11 @@ A Graph has following methods:
     - remove an edge from its internal data structure
     - returns true if the edge is removed and false if the edge does not exist
 """
-# https://stackoverflow.com/questions/39813525/how-do-i-store-this-in-an-adjacency-list-for-graphs-in-python 
 
-# important
-# use this for later to fix code, some stuff is wrong: https://pythonspot.com/en/read-file/
 from io import open
 from operator import itemgetter
 
 def construct_graph_from_file(graph, file_path):
-
-     
-
 
     """
     TODO: read content from file_path, then add nodes and edges to graph object
@@ -44,26 +38,25 @@ def construct_graph_from_file(graph, file_path):
     3. return the graph
 
     """
-    try:
-        with open(file_path) as f1:
-            content = f1.read().splitlines()
-
-        num_nodes = int(content[0])
+   
+with open(file_path) as f1:
+    content = f1.read().splitlines()
+    num_nodes = int(content[0])
         
-        # We got the first line.
-        for v in range(num_nodes):
-            my_nodes = Node(v)
-            graph.add_node(my_node)
-
-        # We do the second line.
-        for v in range(1, len(content)):
-            data = content[v].split(":")
-            my_edge = Edge(Node(int(data[0])), Node(int(data[1])), int(data[2]))
-            graph.add_edge(my_edge)
         
-        return graph
+for v in range(num_nodes):
+    my_nodes = Node(v)
+    graph.add_node(my_node)
 
-# Don't do nothing here.
+        
+for v in range(1, len(content)):
+    data = content[v].split(":")
+    my_edge = Edge(Node(int(data[0])), Node(int(data[1])), int(data[2]))
+    graph.add_edge(my_edge)
+        
+return graph
+
+
 class Node(object):
     """Node represents basic unit of graph"""
     def __init__(self, data):
@@ -74,7 +67,7 @@ class Node(object):
     
     def __repr__(self):
         return 'Node({})'.format(self.data)
-
+        
     def __eq__(self, other_node):
         return self.data == other_node.data
     
@@ -85,7 +78,7 @@ class Node(object):
         return hash(self.data)
 
 
-# Don't do nothing here.
+
 
 class Edge(object):
     """Edge represents basic unit of graph connecting between two edges"""
@@ -119,23 +112,12 @@ class AdjacencyList(object):
         # adjacencyList should be a dictonary of node to edges
         self.adjacency_list = {}
 
-    def adjacent(self, node_1, node_2):
-        assert self.has_node(node1)
-        assert self.has_node(node2)
-        self._nodes[node1].add(node2)
-        
-        # https://github.com/udacity/cs101/blob/master/Lesson_11_Files,_IO,_and_Exceptions/26-Pickle_the_Crawl/supplied/graph.py
+    def adjacent(self, node_1, node_2):       
 
-        # https://stackoverflow.com/questions/36732312/python-build-adjacency-list-from-list-of-nodes-and-edges
-
-        # https://stackoverflow.com/questions/39813525/how-do-i-store-this-in-an-adjacency-list-for-graphs-in-python
-
-        # Homework help with the graphs https://github.com/agore1/cs3240/blob/master/HW3/graph.py
-
-    def neighbors(self, node):
-        if node not in self.neighbors:
-            self.neighbors.append(node)
-            self.neighbors.sort()
+        def neighbors(self, node):
+            if node not in self.neighbors:
+                self.neighbors.append(node)
+                self.neighbors.sort()
 
         
 
@@ -172,16 +154,12 @@ class AdjacencyMatrix(object):
         self.nodes = []
 
     def adjacent(self, node_1, node_2):
-        assert self.has_node(node1)
-        assert self.has_node(node2)
-        self._nodes[node1].add(node2) 
+        
         
 
-    def neighbors(self, node):
-        neighbors = []
-        assert indexNode1 = self.__get_node_index(node_1)
-        assert indexNode2 = self.__get_node_index(node_2)
-        neighbor_weights = self.adjacency_matrix
+        def neighbors(self, node):
+            neighbors = []
+        
 
     def add_node(self, node):
         if node in self.nodes:
@@ -214,8 +192,7 @@ class AdjacencyMatrix(object):
         if edge.from_node not found in self.nodes || edge.to_node not found in self.nodes:
             return true
 
-        assert(indexNode1) = self.__get_node_index(edge.from_node)
-        assert(indexNode2) = self.__get_node_index(edge.to_node)
+        
 
         self.adjacency_matrix[indexNode1][indexNode2] = edge.weight
         return true
@@ -230,8 +207,7 @@ class AdjacencyMatrix(object):
         
         if edge.from_node not found in self.nodes || edge edge.to_node not found in self.nodes:
             return true
-        assert(indexNode1 = self.__get_node_index(edge.from_node))
-        assert(indexNode2 = self.__get_node_index(edge.to_node))
+        
             self.adjacency_matrix[indexNode1][indexNode2] = 0
         if self.adjacency_matrix[indexNode1][indexNode2] == 0:
                 return false
