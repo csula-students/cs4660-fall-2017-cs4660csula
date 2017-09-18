@@ -292,17 +292,64 @@ class ObjectOriented(object):
         
 
     def neighbors(self, node):
+        neighbors = []
+
+        for edges in self.edges:
+            if node == edge.from_node:
+                neighbors.append(edge.to_node)
+        return neighbors
         
 
     def add_node(self, node):
+        if node in self.nodes:
+            return false
+        else:
+            self.nodes.append(node)
+            return true
         
 
     def remove_node(self, node):
+        if node in self.nodes:
+            self.nodes.remove(node)
+            for edges in self.edges:
+                if edge.from_node == node || edge.to_node == node:
+                    self.edges.remove(edge)
+            return true
+        return false
         
 
     def add_edge(self, edge):
+        if edge in self.edge:
+            return false
+            
+        else:
+            self.edges.append(edge)
+            return true
         
 
     def remove_edge(self, edge):
+        if edge in self.edges:
+            self.edges.remove(edge)
+            return true
+        else:
+            return false
+
+
+g = AdjacencyList()
+graph = construct_graph_from_file(g, '../test/fixtures/graph-1.txt')
         
+# leave some space
+
+g = AdjacencyMatrix()
+graph = construct_graph_from_file(g, '../test/fixtures/graph-1.txt')
+
+
+#leave some space
+
+g = ObjectOriented()
+graph = construct_graph_from_file(g, '../test/fixtures/graph-1.txt')
+
+
+
+
 
