@@ -275,7 +275,7 @@ class AdjacencyMatrix(object):
         """helper method to find node index"""
         return self.nodes[node]
 
-        
+
 # This is the third class.
 class ObjectOriented(object):
     """ObjectOriented defines the edges and nodes as both list"""
@@ -285,6 +285,10 @@ class ObjectOriented(object):
         self.nodes = []
 
     def adjacent(self, node_1, node_2):
+        for edge in self.edges:
+            if edge.from_node == node_1 and edge.to_node == node_2:
+                return true
+        return false
         
 
     def neighbors(self, node):
