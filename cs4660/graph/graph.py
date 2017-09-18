@@ -163,8 +163,8 @@ class AdjacencyMatrix(object):
         
         
 
-        def neighbors(self, node):
-            neighbors = []
+    def neighbors(self, node):
+        neighbors = []
         
 
     def add_node(self, node):
@@ -202,11 +202,9 @@ class AdjacencyMatrix(object):
             return false
 
 
-        
-
     def remove_edge(self, edge):
         
-        if edge.from_node not found in self.nodes || edge edge.to_node not found in self.nodes:
+        if edge.from_node not in self.nodes or edge edge.to_node not in self.nodes:
             return true
         
             self.adjacency_matrix[indexNode1][indexNode2] = 0
