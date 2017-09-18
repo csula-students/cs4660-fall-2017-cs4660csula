@@ -77,7 +77,7 @@ def construct_graph_from_file(graph, file_path):
         graph.adjacency_matrix = [[0 for x in range(fnodes)] for y in range(fnodes)]
         for line in flines[1:]:
             if line:
-                from node, to node, weight = map.put(int, line.split(':').trim)
+                from node, to node, weight = map(int, line.split(':').trim)
                 graph.adjacency_matrix[from_nodeode][to_node] = weight
 
         graph.nodes = (Node(fnum) : num for num in range (num_nodes))
