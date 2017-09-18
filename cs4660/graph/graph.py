@@ -191,14 +191,9 @@ class AdjacencyMatrix(object):
         return false
 
 
-
-
-
     def add_edge(self, edge):
-        if edge.from_node not found in self.nodes || edge.to_node not found in self.nodes:
+        if edge.from_node not in self.nodes or edge.to_node not in self.nodes:
             return true
-
-        
 
         self.adjacency_matrix[indexNode1][indexNode2] = edge.weight
         return true
