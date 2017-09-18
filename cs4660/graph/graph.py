@@ -42,7 +42,7 @@ def construct_graph_from_file(graph, file_path):
 
     """
     try:
-        fhand = open('mbox-short.txt')
+        fhand = open(file_path, )
     except:
         print('File not found, lol, what happened?')
         exit()
@@ -57,7 +57,7 @@ def construct_graph_from_file(graph, file_path):
     # inp = fhand.read()
     # print(len(np))
     # alternative method to read files   
-
+    # https://stackoverflow.com/questions/491921/unicode-utf-8-reading-and-writing-to-files-in-python
 
     return graph
 
