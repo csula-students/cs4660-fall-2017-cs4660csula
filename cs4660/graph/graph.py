@@ -115,12 +115,27 @@ class AdjacencyList(object):
         # adjacencyList should be a dictonary of node to edges
         self.adjacency_list = {}
         # adjacent_to complete
-    def adjacent(self, node_1, node_2):
+        # link two nodes in a graph
+    """def adjacent(self, node_1, node_2):
         adjacent_tos = self.neighbors(node_1)
         for adjacent_to in adjacent_tos:
             if adjacent_to == node_2:
                 return True
         return False
+"""
+    def adjacent(self, node_1, node_2):
+        # link two nodes
+        if node_1 not in self.adjacency_list or node_2 not in self.adjacency_list:
+            return False
+        elif node_1 in self.adjacency_list[node_2] and node_2 in self.adjacency_list[node_1]:
+            return False
+        else:
+            self.adjacency_list[node_1].append(node_2)
+            self.adjacency_list[node_2].append(node_1)
+            return True 
+
+
+
 
         # neighbor complete
     def neighbors(self, node):
@@ -131,18 +146,35 @@ class AdjacencyList(object):
         
         # neighbor complete
     def add_node(self, node):
-        self.adjacency_list[node] = True
-        
+        """self.adjacency_list[node] = True"""
+        # Add a node to the graph if not already present
+        if node in self.adjacency_list:
+            return False
+        else:
+            self.adjacency_list[node] = []
+            return True
+
+
+
         #remove complete
     def remove_node(self, node):
-        del self.adjacency_list[node]
+        """del self.adjacency_list[node]
         try :
             for nodebis in self.adjacency_list[node]:
                 self.adjacency_list[nodebis].remove(node)
             del self.adjacency_list[node]
         except :
             return "error"
-        
+        """
+        if node not in self.adjacency_list:
+            return False
+        else:
+            for v in self.adjacency_list:
+                if node in self.adjacency_list[v]:
+                    self.adjacency_list[v].remove(node)
+            del self.adjacency_list[node]
+            return True 
+
         # add edge complete
     def add_edge(self, edge):
         if edge.from_node not in self.adjacency_list or edge.to_node not in self.adjacency_list:
@@ -158,9 +190,24 @@ class AdjacencyList(object):
         
         # remove edge complete
     def remove_edge(self, edge):
-        self.edge.adjacency_list.discard(edge)
+        """self.edge.adjacency_list.discard(edge)"""
         
         # which is better adjacency list or adjacency matrix: https://stackoverflow.com/questions/2218322/what-is-better-adjacency-lists-or-adjacency-matrices-for-graph-problems-in-c
+        """if edge.from_node in self.adjacency_list:
+            return False
+        if edge.to_node in self.adjacency_list[edge.from_node]:
+            self.adjacency_list[edge.from_node].remove(edge.to_node)
+            return True
+        """
+        # cleaner this way
+        adj_edge_to_remove = self.adjacency_list[edge.from_node]
+        if edge not in adj_edge_to_remove:
+            return False
+        adj_edge_to_remove.remove(edge)
+        return True
+
+
+
 
 class AdjacencyMatrix(object):
     def __init__(self):
