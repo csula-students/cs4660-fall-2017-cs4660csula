@@ -38,6 +38,9 @@ def construct_graph_from_file(graph, file_path):
     3. return the graph
 
     """
+
+    # watch video for code to build graphs
+    # https://www.youtube.com/watch?v=HDUzBEG1GlA&t=196s
    
     with open(file_path) as f1:
         content = f1.read().splitlines()
@@ -79,7 +82,7 @@ class Node(object):
 
 
 
-
+# This is the edge object. It makes up the edge of the graph. 
 class Edge(object):
     """Edge represents basic unit of graph connecting between two edges"""
     def __init__(self, from_node, to_node, weight):
