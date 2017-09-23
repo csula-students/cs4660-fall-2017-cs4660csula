@@ -142,6 +142,7 @@ class AdjacencyList(object):
         if node not in self.neighbors:
             self.neighbors.append(node)
             self.neighbors.sort()
+        return []
 
         
         # neighbor complete
