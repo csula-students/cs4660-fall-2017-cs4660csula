@@ -52,9 +52,9 @@ def construct_graph_from_file(graph, file_path):
         graph.add_node(my_nodes)
 
         
-    for v in range(1, len(content)):
-        data = content[v].split(":")
-        my_edge = Edge(Node(int(data[0])), Node(int(data[1])), int(data[2]))
+    for v1 in range(1, len(content)):
+        values = content[v].split(":")
+        my_edge = Edge(Node(int(values[0])), Node(int(values[1])), int(values[2]))
         graph.add_edge(my_edge)
 
     return graph
