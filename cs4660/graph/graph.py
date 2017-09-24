@@ -295,7 +295,7 @@ class AdjacencyMatrix(object):
             return False
         else:
             self.nodes.remove(node)
-            for v, edges in range(len(self.adjacency_matrix)):
+            for v, edges in enumerate(self.adjacency_matrix):
                 for edge in edges:
                     if edge.to_node == node or edge.from_node == node:
                         self.adjacency_matrix[v].remove(edge)
