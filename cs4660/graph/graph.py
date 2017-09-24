@@ -362,7 +362,7 @@ class ObjectOriented(object):
 
         for edge in self.edges:
             if edge.to_node not in neighbor and edge.from_node == node:
-                neighbors.append(edge.to_node)
+                neighbor.append(edge.to_node)
         return neighbor
 
     #neighbors method complete
