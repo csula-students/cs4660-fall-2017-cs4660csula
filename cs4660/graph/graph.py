@@ -152,7 +152,7 @@ class AdjacencyList(object):
         if node not in self.adjacency_list:
             return []
         else:
-            return list(map((lamda edge: edge.to_node), self.adjacency_list[node]))
+            return list(map((lambda edge: edge.to_node), self.adjacency_list[node]))
         # end method neighbors, complete
 
 
