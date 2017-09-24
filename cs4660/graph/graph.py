@@ -42,6 +42,22 @@ def construct_graph_from_file(graph, file_path):
     # watch video for code to build graphs
     # https://www.youtube.com/watch?v=HDUzBEG1GlA&t=196s
    
+    f1 = open(file_path)
+
+    node_num = int(f1.readline())
+
+    for v in range(0, node_num):
+        graph.add_node(Node(v))
+
+    for line in f1:
+        graph.add_edge(Edge(Node(int(line.split(":")[0])), Node(int(line.split(":")[1])), int(line.split(":")[2])))
+    return graph
+
+    return graph 
+
+
+
+   """
     with open(file_path) as f1:
         content = f1.read().splitlines()
         num_nodes = int(content[0])
@@ -58,7 +74,7 @@ def construct_graph_from_file(graph, file_path):
         graph.add_edge(my_edge)
 
     return graph
-
+    """
 
 class Node(object):
     """Node represents basic unit of graph"""
