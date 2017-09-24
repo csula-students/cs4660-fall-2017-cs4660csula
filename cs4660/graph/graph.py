@@ -57,7 +57,7 @@ def construct_graph_from_file(graph, file_path):
 
 
 
-   """
+    """
     with open(file_path) as f1:
         content = f1.read().splitlines()
         num_nodes = int(content[0])
