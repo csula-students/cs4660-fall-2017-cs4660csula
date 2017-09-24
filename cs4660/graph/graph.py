@@ -377,12 +377,12 @@ class ObjectOriented(object):
       #add_nodes method complete  
       
     def remove_node(self, node):
-        if node in self.nodes:
+        if node not in self.nodes:
             return False 
             self.nodes.remove(node)
             for edge in self.edges:
                 if edge.from_node == node or edge.to_node == node:
-                    self.edges.remove(edge)
+                    self.remove_edge(edge)
             return True
      # remove_node complete
         
@@ -400,7 +400,7 @@ class ObjectOriented(object):
         if edge not in self.edges:
             return False 
         else:
-            self.edges.remove(edge)
+            self.remove_edge(edge)
             return True
         
     #remove edges method complete
