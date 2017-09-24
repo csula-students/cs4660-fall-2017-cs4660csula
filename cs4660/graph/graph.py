@@ -379,7 +379,7 @@ class AdjacencyMatrix(object):
 
     def remove_edge(self, edge):        
         
-
+        """
         from_my_node_index = self.__get_node_index(edge.from_node)
         to_my_node_index = self.__get_node_index(edge.to_node)
 
@@ -388,7 +388,33 @@ class AdjacencyMatrix(object):
             return True
         else:
             return False 
-        
+        """
+
+        # This method was giving the list index out of bounds exception. 
+        # This method was giving the list index out of bounds exception.
+        # THis method was giving the list index out of bounds exception.
+        # This method was giving the list index out of bounds exception.
+        # THis method was giving the list index out of bounds exception.
+        # This method was giving the list index out of bounds exception.
+        # THis method was giving the list index out of bounds exception.
+        # This method was giving the list index out of bounds exception. 
+
+        neighbors = self.adjacency_matrix[self.__get_node_index(edge.from_node)]
+        if edge in neighbors:
+            neighbors.remove(edge)
+            return True
+        else:
+            return False
+
+        # THis method was giving the list index out of bounds exception.
+        # This method was giving the list index out of bounds exception.
+        # THis method was giving the list index out of bounds exception.
+        # This method was giving the list index out of bounds exception.
+        # THis method was giving the list index out of bounds exception.
+        # This method was giving the list index out of bounds exception. 
+
+
+
         """
         if edge.from_node not in self.nodes or edge.to_node not in self.nodes:
             return False
@@ -490,7 +516,8 @@ class ObjectOriented(object):
     
     # updated remove edge with correct code 7:45 pm
     #remove edges method complete
-
+# not needed anymore
+"""
 def main():
 
     g = AdjacencyList()
@@ -509,8 +536,9 @@ def main():
 
 if __name__ == "__main_":
     main()
+"""
 
 
 
-
-
+ #Helpful links
+ # https://www.ics.uci.edu/~pattis/common/modules/courselib/graph.py
