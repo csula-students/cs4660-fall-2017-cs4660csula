@@ -174,10 +174,10 @@ class AdjacencyList(object):
             return list(map((lambda edge: edge.to_node), self.adjacency_list[node]))
         # end method neighbors, complete
          """
-         my_answer = []
+        my_answer = []
          for edge in self.adjacency_list[node]:
             my_answer.append(edge.to_node)
-         return my_answer
+        return my_answer
 
 
         
