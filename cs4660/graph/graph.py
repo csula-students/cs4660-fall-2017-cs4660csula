@@ -415,12 +415,12 @@ class ObjectOriented(object):
         #add_edges method complete
 
     def remove_edge(self, edge):
-        if edge not in self.edges:
-            return False 
-        else:
-            self.remove_edge(edge)
+        if edge in self.edges:
+            self.edges.remove(edge)
             return True
-        
+        else: return False
+    
+    # updated remove edge with correct code 7:45 pm
     #remove edges method complete
 
 def main():
