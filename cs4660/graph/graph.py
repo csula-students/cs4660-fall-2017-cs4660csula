@@ -152,9 +152,9 @@ class AdjacencyList(object):
             self.adjacency_list[node_2].append(node_1)
             return True 
         """
-        adjacent_neighbors = self.neighbors(node_1)
+        adjacent_neighbors = self.adjacency_list[node_1]
         for neighbor in adjacent_neighbors:
-            if neighbor == node_2:
+            if neighbor.to_node == node_2:
                 return True
         return False 
         # end method adjacent, complete
@@ -167,6 +167,7 @@ class AdjacencyList(object):
             self.neighbors.append(node)
             self.neighbors.sort()
         return []"""
+        
         if node not in self.adjacency_list:
             return []
         else:
