@@ -240,7 +240,7 @@ class AdjacencyMatrix(object):
         else:
             self.nodes.append(node)
         
-        my_temp = self.adjacency_matrix = [[0 for v in range(node.other_node.data+1)] for w in range(node.data+1)]
+        my_temp = self.adjacency_matrix = [[0 for v in range(node.data+1)] for w in range(node.data+1)]
         my_length = len(self.adjacency_matrix) if len(my_temp) > len(self.adjacency_matrix) else len(my_temp)
         
         for v in range(my_length):
