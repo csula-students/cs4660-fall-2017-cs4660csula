@@ -44,14 +44,16 @@ def construct_graph_from_file(graph, file_path):
    
     f1 = open(file_path)
 
-    node_num = int(f1.readline())
+    node_num = (int)(f1.readline())
 
-    for v in range(0, node_num):
+    for v in range(node_num):
         graph.add_node(Node(v))
 
     for line in f1:
-        graph.add_edge(Edge(Node(int(line.split(":")[0])), Node(int(line.split(":")[1])), int(line.split(":")[2])))
-    return graph
+        my_line_array = line.strip('\n').split(':')
+        graph.add_edge(Edge(Node(int(my_line_array[0])), Node(int(my_line_array[1])), int(my_line_array[2])))
+    
+    f1.close()
 
     return graph 
 
