@@ -649,7 +649,7 @@ if __name__ == "__main__":
 	
 	Dijkstra(src, dst)
 
-if __name__ == "__main__":
+"""if __name__ == "__main__":
     # Your code starts here
     empty_room = get_state('7f3dc077574c013d98b2de8f735058b4')
     print(empty_room)
@@ -657,3 +657,5 @@ if __name__ == "__main__":
 
 
     #is this working? test test
+    #it won't definitely work with two main methods
+    """
