@@ -1,6 +1,8 @@
 """
 quiz2!
 
+Fixng this up to push properly to git hub
+
 Use path finding algorithm to find your way through dark dungeon!
 
 Tecchnical detail wise, you will need to find path from node 7f3dc077574c013d98b2de8f735058b4
@@ -643,7 +645,7 @@ def Dijkstra(src, dst):
             path = (parent_name + "(" + parent + ")" + " : " + current_name + "(" + current + ")") + '\n' + path
             current = parent
             current_name = parent_name;
-            print (parent_name + "(" + parent + ")" + " : " + current_name + "(" + current + ")")
+            #print (parent_name + "(" + parent + ")" + " : " + current_name + "(" + current + ")")
         print (path)    
         print ('Total hp: ' + str(finalNode.data[2]))
         #print ('Total hp: ' + str(hp))
@@ -663,3 +665,4 @@ if __name__ == "__main__":
     Dijkstra(src, dst)
     
     
+    # fixing this thing up
